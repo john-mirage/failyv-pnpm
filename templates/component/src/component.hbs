@@ -1,0 +1,15 @@
+import { LitElement, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import componentStyle from "./faily-{{ name }}.style";
+
+@customElement("faily-{{ name }}")
+export class Faily{{ pascalCase name }} extends LitElement {
+  static styles = componentStyle;
+
+  @property()
+  name?: string = "World";
+
+  render() {
+    return html`<p>Hello, ${this.name}!</p>`;
+  }
+}

@@ -11,28 +11,18 @@ module.exports = function (plop) {
     actions: [
       {
         type: "add",
-        path: "packages/faily-{{ name }}/tsconfig.json",
-        templateFile: "templates/component/tsconfig.hbs",
+        path: "packages/ui/src/components/faily-{{ name }}/faily-{{ name }}.ts",
+        templateFile: "templates/component/component.hbs",
       },
       {
         type: "add",
-        path: "packages/faily-{{ name }}/package.json",
-        templateFile: "templates/component/package.hbs",
+        path: "packages/ui/src/components/faily-{{ name }}/faily-{{ name }}.style.ts",
+        templateFile: "templates/component/component.style.hbs",
       },
       {
         type: "add",
-        path: "packages/faily-{{ name }}/.eslintrc.js",
-        templateFile: "templates/component/eslintrc.hbs",
-      },
-      {
-        type: "add",
-        path: "packages/faily-{{ name }}/src/faily-{{ name }}.ts",
-        templateFile: "templates/component/src/component.hbs",
-      },
-      {
-        type: "add",
-        path: "packages/faily-{{ name }}/src/faily-{{ name }}.style.ts",
-        templateFile: "templates/component/src/component.style.hbs",
+        path: "packages/ui/src/components/faily-{{ name }}/index.ts",
+        templateFile: "templates/component/index.hbs",
       },
     ],
   });

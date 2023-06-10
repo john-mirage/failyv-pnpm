@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { property } from "lit/decorators.js";
 import componentStyle from "./faily-text.style";
-import { globalStyle, themeStyle } from "common-styles";
+import globalStyle from "../../styles/global.style";
+import themeStyle from "../../styles/theme.style";
 
-@customElement("faily-text")
-export class FailyText extends LitElement {
+class FailyText extends LitElement {
   static styles = [globalStyle, themeStyle, componentStyle];
 
   @property()
@@ -14,3 +14,5 @@ export class FailyText extends LitElement {
     return html` <slot></slot> `;
   }
 }
+
+export default FailyText;

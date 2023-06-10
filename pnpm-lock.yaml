@@ -28,15 +28,15 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
-      faily-button:
-        specifier: workspace:*
-        version: link:../../packages/faily-button
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:
         specifier: ^5.0.2
         version: 5.0.2
+      ui:
+        specifier: workspace:*
+        version: link:../../packages/ui
       vite:
         specifier: ^4.3.9
         version: 4.3.9
@@ -58,12 +58,15 @@ importers:
       '@storybook/web-components-vite':
         specifier: ^7.0.20
         version: 7.0.20(lit@2.7.5)(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.2)(vite@4.3.9)
-      faily-button:
+      eslint:
+        specifier: ^8.42.0
+        version: 8.42.0
+      eslint-config-custom:
         specifier: workspace:*
-        version: link:../../packages/faily-button
-      faily-text:
-        specifier: workspace:*
-        version: link:../../packages/faily-text
+        version: link:../../packages/eslint-config-custom
+      eslint-plugin-storybook:
+        specifier: ^0.6.12
+        version: 0.6.12(eslint@8.42.0)(typescript@5.0.2)
       lit:
         specifier: ^2.7.5
         version: 2.7.5
@@ -79,28 +82,12 @@ importers:
       typescript:
         specifier: ^5.0.2
         version: 5.0.2
+      ui:
+        specifier: workspace:*
+        version: link:../../packages/ui
       vite:
         specifier: ^4.3.9
         version: 4.3.9
-
-  packages/common-styles:
-    dependencies:
-      lit:
-        specifier: ^2.7.5
-        version: 2.7.5
-    devDependencies:
-      eslint:
-        specifier: ^8.42.0
-        version: 8.42.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
-      typescript:
-        specifier: ^5.0.2
-        version: 5.0.2
 
   packages/eslint-config-custom:
     dependencies:
@@ -117,73 +104,26 @@ importers:
         specifier: ^8.3.0
         version: 8.3.0(eslint@8.42.0)
 
-  packages/faily-button:
-    dependencies:
-      lit:
-        specifier: ^2.7.5
-        version: 2.7.5
-    devDependencies:
-      common-styles:
-        specifier: workspace:*
-        version: link:../common-styles
-      eslint:
-        specifier: ^8.42.0
-        version: 8.42.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
-      typescript:
-        specifier: ^5.0.2
-        version: 5.0.2
-
-  packages/faily-icon:
-    dependencies:
-      lit:
-        specifier: ^2.7.5
-        version: 2.7.5
-    devDependencies:
-      common-styles:
-        specifier: workspace:*
-        version: link:../common-styles
-      eslint:
-        specifier: ^8.42.0
-        version: 8.42.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
-      typescript:
-        specifier: ^5.0.2
-        version: 5.0.2
-
-  packages/faily-text:
-    dependencies:
-      lit:
-        specifier: ^2.7.5
-        version: 2.7.5
-    devDependencies:
-      common-styles:
-        specifier: workspace:*
-        version: link:../common-styles
-      eslint:
-        specifier: ^8.42.0
-        version: 8.42.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
-      typescript:
-        specifier: ^5.0.2
-        version: 5.0.2
-
   packages/tsconfig: {}
+
+  packages/ui:
+    dependencies:
+      lit:
+        specifier: ^2.7.5
+        version: 2.7.5
+    devDependencies:
+      eslint:
+        specifier: ^8.42.0
+        version: 8.42.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: ^5.0.2
+        version: 5.0.2
 
 packages:
 
@@ -3558,6 +3498,12 @@ packages:
       - supports-color
     dev: true
 
+  /@storybook/csf@0.0.1:
+    resolution: {integrity: sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==}
+    dependencies:
+      lodash: 4.17.21
+    dev: true
+
   /@storybook/csf@0.1.1:
     resolution: {integrity: sha512-4hE3AlNVxR60Wc5KSC68ASYzUobjPqtSKyhV6G+ge0FIXU55N5nTY7dXGRZHQGDBPq+XqchMkIdlkHPRs8nTHg==}
     dependencies:
@@ -3884,7 +3830,6 @@ packages:
 
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
-    dev: false
 
   /@types/liftoff@4.0.0:
     resolution: {integrity: sha512-Ny/PJkO6nxWAQnaet8q/oWz15lrfwvdvBpuY4treB0CSsBO1CG0fVuNLngR3m3bepQLd+E4c3Y3DlC2okpUvPw==}
@@ -4062,7 +4007,6 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.59.0
       '@typescript-eslint/visitor-keys': 5.59.0
-    dev: false
 
   /@typescript-eslint/type-utils@5.59.0(eslint@8.42.0)(typescript@5.0.2):
     resolution: {integrity: sha512-d/B6VSWnZwu70kcKQSCqjcXpVH+7ABKH8P1KNn4K7j5PXXuycZTPXF44Nui0TEm6rbWGi8kc78xRgOC4n7xFgA==}
@@ -4087,7 +4031,6 @@ packages:
   /@typescript-eslint/types@5.59.0:
     resolution: {integrity: sha512-yR2h1NotF23xFFYKHZs17QJnB51J/s+ud4PYU4MqdZbzeNxpgUr05+dNeCN/bb6raslHvGdd6BFCkVhpPk/ZeA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dev: false
 
   /@typescript-eslint/typescript-estree@5.59.0(typescript@5.0.2):
     resolution: {integrity: sha512-sUNnktjmI8DyGzPdZ8dRwW741zopGxltGs/SAPgGL/AAgDpiLsCFLcMNSpbfXfmnNeHmK9h3wGmCkGRGAoUZAg==}
@@ -4108,7 +4051,6 @@ packages:
       typescript: 5.0.2
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /@typescript-eslint/utils@5.59.0(eslint@8.42.0)(typescript@5.0.2):
     resolution: {integrity: sha512-GGLFd+86drlHSvPgN/el6dRQNYYGOvRSDVydsUaQluwIW3HvbXuxyuD5JETvBt/9qGYe+lOrDk6gRrWOHb/FvA==}
@@ -4128,7 +4070,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: false
 
   /@typescript-eslint/visitor-keys@5.59.0:
     resolution: {integrity: sha512-qZ3iXxQhanchCeaExlKPV3gDQFxMUmU35xfd5eCXB6+kUw1TUAbIy2n7QIrwz9s98DQLzNWyHp61fY0da4ZcbA==}
@@ -4136,7 +4077,6 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.59.0
       eslint-visitor-keys: 3.4.1
-    dev: false
 
   /@yarnpkg/esbuild-plugin-pnp@3.0.0-rc.15(esbuild@0.17.19):
     resolution: {integrity: sha512-kYzDJO5CA9sy+on/s2aIW0411AklfCi8Ck/4QDivOqsMKpStZA2SsR+X27VTggGwpStWaLrjJcDcdDMowtG8MA==}
@@ -5217,13 +5157,28 @@ packages:
       eslint: 8.42.0
     dev: false
 
+  /eslint-plugin-storybook@0.6.12(eslint@8.42.0)(typescript@5.0.2):
+    resolution: {integrity: sha512-XbIvrq6hNVG6rpdBr+eBw63QhOMLpZneQVSooEDow8aQCWGCk/5vqtap1yxpVydNfSxi3S/3mBBRLQqKUqQRww==}
+    engines: {node: 12.x || 14.x || >= 16}
+    peerDependencies:
+      eslint: '>=6'
+    dependencies:
+      '@storybook/csf': 0.0.1
+      '@typescript-eslint/utils': 5.59.0(eslint@8.42.0)(typescript@5.0.2)
+      eslint: 8.42.0
+      requireindex: 1.2.0
+      ts-dedent: 2.2.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /eslint-scope@5.1.1:
     resolution: {integrity: sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==}
     engines: {node: '>=8.0.0'}
     dependencies:
       esrecurse: 4.3.0
       estraverse: 4.3.0
-    dev: false
 
   /eslint-scope@7.2.0:
     resolution: {integrity: sha512-DYj5deGlHBfMt15J7rdtyKNq/Nqlv5KfU4iodrQ019XESsRnwXH9KAE0y3cwtUHDo2ob7CypAnCqefh6vioWRw==}
@@ -5312,7 +5267,6 @@ packages:
   /estraverse@4.3.0:
     resolution: {integrity: sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==}
     engines: {node: '>=4.0'}
-    dev: false
 
   /estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
@@ -7637,6 +7591,11 @@ packages:
       unist-util-visit: 2.0.3
     dev: true
 
+  /requireindex@1.2.0:
+    resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
+    engines: {node: '>=0.10.5'}
+    dev: true
+
   /resolve-dir@1.0.1:
     resolution: {integrity: sha512-R7uiTjECzvOsWSfdM0QKFNBVFcK27aHOUwdvK53BcW8zqnGdYp0Fbj82cy54+2A4P2tFM22J5kRfe1R+lM/1yg==}
     engines: {node: '>=0.10.0'}
@@ -8222,7 +8181,6 @@ packages:
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: false
 
   /tslib@2.5.3:
     resolution: {integrity: sha512-mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w==}
@@ -8236,7 +8194,6 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 5.0.2
-    dev: false
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}

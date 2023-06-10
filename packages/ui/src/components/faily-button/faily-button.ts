@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { property } from "lit/decorators.js";
 import componentStyle from "./faily-button.style";
-import { globalStyle, themeStyle } from "common-styles";
+import globalStyle from "../../styles/global.style";
+import themeStyle from "../../styles/theme.style";
 
-@customElement("faily-button")
-export class FailyButton extends LitElement {
+class FailyButton extends LitElement {
   static styles = [globalStyle, themeStyle, componentStyle];
 
   @property()
@@ -20,3 +20,5 @@ export class FailyButton extends LitElement {
     `;
   }
 }
+
+export default FailyButton;

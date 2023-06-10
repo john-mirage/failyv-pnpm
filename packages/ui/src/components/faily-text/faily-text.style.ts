@@ -9,10 +9,10 @@ const componentStyle = css`
   }
 
   :host([variant="button"]) {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     line-height: 24px;
   }
 `;

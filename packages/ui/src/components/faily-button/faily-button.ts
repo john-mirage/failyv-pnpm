@@ -13,9 +13,7 @@ class FailyButton extends LitElement {
   render() {
     return html`
       <button class="button">
-        <faily-text variant="button">
-          <slot></slot>
-        </faily-text>
+        <slot></slot>
       </button>
     `;
   }

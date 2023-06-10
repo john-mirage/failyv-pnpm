@@ -5,6 +5,7 @@
     "lit": "^2.7.5"
   },
   "devDependencies": {
+    "common-styles": "workspace:*",
     "eslint": "^8.42.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",

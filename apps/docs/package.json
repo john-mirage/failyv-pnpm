@@ -8,6 +8,7 @@
     "@storybook/web-components": "^7.0.20",
     "@storybook/web-components-vite": "^7.0.20",
     "faily-button": "workspace:*",
+    "faily-text": "workspace:*",
     "lit": "^2.7.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

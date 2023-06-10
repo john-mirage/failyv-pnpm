@@ -1,15 +1,16 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import componentStyle from "./faily-text.style";
+import { globalStyle, themeStyle } from "common-styles";
 
 @customElement("faily-text")
 export class FailyText extends LitElement {
-  static styles = componentStyle;
+  static styles = [globalStyle, themeStyle, componentStyle];
 
   @property()
-  name?: string = "World";
+  variant?: string;
 
   render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+    return html` <slot></slot> `;
   }
 }

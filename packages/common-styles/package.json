@@ -1,21 +1,20 @@
 {
-  "name": "faily-icon",
+  "name": "common-styles",
   "version": "0.0.0",
   "dependencies": {
     "lit": "^2.7.5"
   },
   "devDependencies": {
-    "common-styles": "workspace:*",
     "eslint": "^8.42.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.0.2"
   },
-  "main": "./src/faily-icon.ts",
+  "main": "./index.ts",
   "private": true,
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
   },
   "type": "module",
-  "types": "./src/faily-icon.ts"
+  "types": "./index.ts"
 }

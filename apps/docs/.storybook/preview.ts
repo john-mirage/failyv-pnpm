@@ -1,12 +1,6 @@
-import type { Preview } from "@storybook/web-components";
+import "../src/main.css";
 
-import { FailyButton, FailyIcon, FailyTextInput } from "ui";
-
-customElements.define("faily-button", FailyButton);
-customElements.define("faily-icon", FailyIcon);
-customElements.define("faily-text-input", FailyTextInput);
-
-const preview: Preview = {
+const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {

@@ -1,5 +1,3 @@
-import FailyButton from "./components/faily-button";
-import FailyIcon from "./components/faily-icon";
-import FailyTextInput from "./components/faily-text-input";
+import Button from "./components/button";
 
-export { FailyButton, FailyIcon, FailyTextInput };
+export { Button };

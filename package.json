@@ -9,6 +9,7 @@
   "private": true,
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "generate:application": "plop application",
     "generate:component": "plop component",
     "package:fix": "syncpack fix-mismatches",
     "package:format": "syncpack format",

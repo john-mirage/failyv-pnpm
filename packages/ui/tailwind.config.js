@@ -2,6 +2,6 @@ import sharedConfig from "tailwind-config";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  prefix: "ui-",
   presets: [sharedConfig],
-  content: ["./src/**/*.{js,ts,jsx,tsx,css,md,mdx,html,json,scss}"],
 };
